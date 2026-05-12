@@ -73,3 +73,6 @@
 [submodule "plugins/gratitude"]
 	path = plugins/gratitude
 	url = https://github.com/BlythT/Gratitude-Millennium-Plugin
+[submodule "plugins/auto-claim"]
+	path = plugins/auto-claim
+	url = https://github.com/BambooFury/Auto-Claim
