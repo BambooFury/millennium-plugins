@@ -3,7 +3,7 @@ on:
     workflow_dispatch:
         inputs:
             message:
-                description: "Comment to post on all open issues"
+                description: "Comment to post on all open PRs"
                 required: true
 
 jobs:
@@ -11,12 +11,12 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - name: Comment on all open issues
+            - name: Comment on all open PRs
               env:
                   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
-                  gh issue list --state open --limit 1000 --json number --jq '.[].number' | \
+                  gh pr list --state open --limit 1000 --json number --jq '.[].number' | \
                   jq '.[]' | \
                   while read num; do
-                    gh issue comment "$num" --body "${{ github.event.inputs.message }}"
+                    gh pr comment "$num" --body "${{ github.event.inputs.message }}"
                   done
