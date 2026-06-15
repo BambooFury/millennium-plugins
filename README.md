@@ -1,5 +1,5 @@
 
-# PluginDatabase for [Millennium](https://github.com/SteamClientHomebrew/Millennium)
+# PluginDatabase
 
 [Home Page](https://steambrew.app/) • [Discord](https://steambrew.app/discord) • [Documentation](https://docs.steambrew.app/)
 
